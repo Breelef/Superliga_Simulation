@@ -1,0 +1,15 @@
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\bin\Debug\net6.0\Superliga_Simulation.exe
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\bin\Debug\net6.0\Superliga_Simulation.deps.json
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\bin\Debug\net6.0\Superliga_Simulation.runtimeconfig.json
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\bin\Debug\net6.0\Superliga_Simulation.dll
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\bin\Debug\net6.0\Superliga_Simulation.pdb
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.csproj.AssemblyReference.cache
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.AssemblyInfoInputs.cache
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.AssemblyInfo.cs
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.csproj.CoreCompileInputs.cache
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.dll
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\refint\Superliga_Simulation.dll
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.pdb
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\Superliga_Simulation.genruntimeconfig.cache
+C:\Users\emil_\RiderProjects\Superliga_Simulation\Superliga_Simulation\obj\Debug\net6.0\ref\Superliga_Simulation.dll
