@@ -11,6 +11,8 @@ namespace Superliga_Simulation
         private int målimod;
         private int målfor;
         private int point;
+        private int homeGames;
+        private int awayGames;
 
         public Hold(string navn, string forkortelse, int kampeSpillet, int vundet, 
             int uafgjort, int tabt, int målimod, int målfor, int point)
@@ -94,6 +96,7 @@ namespace Superliga_Simulation
             get { return point; }
             set { point = value; }
         }
+        
         public List<Hold> ReadTeams(List<Hold> holdList)
         {
             using (StreamReader reader = new StreamReader("C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation/files/setup.csv"))
@@ -181,6 +184,85 @@ namespace Superliga_Simulation
                 sw2.WriteLine($"{hold.Navn},{hold.Forkortelse},{hold.KampeSpillet},{hold.Vundet},{hold.Uafgjort}," +
                              $"{hold.Tabt},{hold.Målimod},{hold.Målfor},{hold.Point}");
             }
+        }
+
+        public List<Hold> readPlayoffTeamsChamps(List<Hold> holdList)
+        {
+            using (StreamReader reader = new StreamReader("C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation/files/Playoffs/Mesterskabsspil.csv"))
+            {
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    string[] data = reader.ReadLine().Split(",");
+                    holdList.Add(new Hold(
+                        data[0],
+                        data[1],
+                        int.Parse(data[2]),
+                        int.Parse(data[3]),
+                        int.Parse(data[4]),
+                        int.Parse(data[5]),
+                        int.Parse(data[6]),
+                        int.Parse(data[7]),
+                        int.Parse(data[8])
+                    ));
+                }
+            }
+            return holdList;
+        }   
+        public List<Hold> readPlayoffTeamsRelegation(List<Hold> holdList)
+        {
+            using (StreamReader reader = new StreamReader("C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation/files/Playoffs/Nedrykningsspil.csv"))
+            {
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    string[] data = reader.ReadLine().Split(",");
+                    holdList.Add(new Hold(
+                        data[0],
+                        data[1],
+                        int.Parse(data[2]),
+                        int.Parse(data[3]),
+                        int.Parse(data[4]),
+                        int.Parse(data[5]),
+                        int.Parse(data[6]),
+                        int.Parse(data[7]),
+                        int.Parse(data[8])
+                    ));
+                }
+            }
+            return holdList;
+        }
+
+        public void finalStandings(List<Hold> champs, List<Hold> relegation)
+        {
+            champs = champs
+                .OrderByDescending(x => x.Point)
+                .ThenByDescending(x => x.Målfor - x.Målimod)
+                .ThenByDescending(x => x.Målfor)
+                .ThenBy(x => x.Målimod)
+                .ThenBy(x => x.Navn)
+                .ToList();
+            relegation = relegation
+                .OrderByDescending(x => x.Point)
+                .ThenByDescending(x => x.Målfor - x.Målimod)
+                .ThenByDescending(x => x.Målfor)
+                .ThenBy(x => x.Målimod)
+                .ThenBy(x => x.Navn)
+                .ToList();
+            using StreamWriter sw = new StreamWriter("C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation/files/setup.csv");
+            sw.WriteLine("navn,forkortelse,kampeSpillet,vundet,uafgjort,tabt,målimod,målfor,point");
+            foreach (Hold hold in champs)
+            {
+                sw.WriteLine($"{hold.Navn},{hold.Forkortelse},{hold.KampeSpillet},{hold.Vundet},{hold.Uafgjort}," +
+                             $"{hold.Tabt},{hold.Målimod},{hold.Målfor},{hold.Point}");
+            }
+
+            foreach (Hold hold in relegation)
+            {
+                sw.WriteLine($"{hold.Navn},{hold.Forkortelse},{hold.KampeSpillet},{hold.Vundet},{hold.Uafgjort}," +
+                             $"{hold.Tabt},{hold.Målimod},{hold.Målfor},{hold.Point}");
+            }
+            
         }
 
         public override string ToString()

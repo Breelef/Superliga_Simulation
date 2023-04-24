@@ -8,7 +8,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="files\Playoffs\PlayOffRounds" />
+      <Folder Include="files\Playoffs\PlayOffRounds\ChampionsPath" />
+      <Folder Include="files\Playoffs\PlayOffRounds\RelegationPath" />
       <Folder Include="files\runder" />
     </ItemGroup>
 

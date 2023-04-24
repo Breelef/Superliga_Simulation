@@ -88,6 +88,70 @@ namespace Superliga_Simulation
             }
             return gamesMade;
         }
+
+        public List<Kamp> readPlayOffGamesChampions()
+        {
+            List<Kamp> gamesMade = new List<Kamp>();
+            String[] files;
+            try
+            {
+                files = Directory.GetFiles(
+                    "C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation/files" +
+                    "/Playoffs/PlayOffRounds/ChampionsPath");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            for (int i = 23; i < files.Length+23; i++)
+            {
+                
+                using StreamReader reader = new StreamReader("C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation" +
+                                                             "/files/Playoffs/PlayOffRounds/ChampionsPath/runde-"+i+".csv");
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    string[] data = reader.ReadLine().Split();
+                    string makeMatch = data[0];
+                    gamesMade.Add(new Kamp(makeMatch));
+                }
+            }
+
+            return gamesMade;
+        }
+
+        public List<Kamp> readPlayOffGamesRelegation()
+        {
+            List<Kamp> gamesMade = new List<Kamp>();
+            String[] files;
+            try
+            {
+                files = Directory.GetFiles(
+                    "C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation/files" +
+                    "/Playoffs/PlayOffRounds/RelegationPath");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+            for (int i = 23; i < files.Length+23; i++)
+            {
+                
+                using StreamReader reader = new StreamReader("C:/Users/emil_/RiderProjects/Superliga_Simulation/Superliga_Simulation" +
+                                                             "/files/Playoffs/PlayOffRounds/RelegationPath/runde-"+i+".csv");
+                reader.ReadLine();
+                while (!reader.EndOfStream)
+                {
+                    string[] data = reader.ReadLine().Split();
+                    string makeMatch = data[0];
+                    gamesMade.Add(new Kamp(makeMatch));
+                }
+            }
+
+            return gamesMade;
+        }
         
         public override string ToString()
         {
